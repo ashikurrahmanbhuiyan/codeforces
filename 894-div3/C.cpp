@@ -18,6 +18,27 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
+    int n;cin>>n;int arr[n]; rep cin>>arr[i];int ans = 0;
+    for(int i = 0;i<n-1;i++){
+    	if(arr[i]!=arr[i+1]){
+    		if(arr[i]<(n+1)){
+    		if(arr[arr[i]-1] == i+1){
+    			ans++;
+    		}
+    		}
+    	}
+    	else
+    		ans++;
+
+    }
+    if(arr[n-1]<(n+1)){
+    if(arr[arr[n-1]-1] == n){
+    			ans++;
+    		}}
+    if(n== ans) cout<<"YES"<<el;
+    else cout<<"NO"<<el;
     
   }
 }
+
+agfgftr2323
