@@ -34,10 +34,11 @@ in(t);while(t--){
       for(int i = d+1;i<n;i++){
         a[i]=0;
       }
-      if(a[0]>=5)cout<<10;
-      else cout<<a[0];
+      int z;
+      if(a[0]>=5)z=10;
+      else z=a[0];
       for(int i = 1;i<n;i++){
-         cout<<a[i];
+         z=(z*10) +a[i];
        } cout<<el;
     }
   }
