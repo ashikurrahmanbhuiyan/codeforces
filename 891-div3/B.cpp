@@ -18,6 +18,27 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    
+    string arr;cin>>arr;int n = arr.length();int a[n];
+    for(int i = 0;i<n;i++){
+      a[i] = arr[i]-48;
+    }
+    int d = -1;
+    for(int i = 0;i<n;i++){
+      if(a[i]>=5)  {d = i;break;}
+    }
+    if(d==-1) {rep cout<<a[i]; cout<<el;}
+    else{
+      for(int i = d;i>0;i--){
+        if(a[i]>=5) {a[i] =0; a[i-1] += 1;}
+      }
+      for(int i = d+1;i<n;i++){
+        a[i]=0;
+      }
+      if(a[0]>=5)cout<<10;
+      else cout<<a[0];
+      for(int i = 1;i<n;i++){
+         cout<<a[i];
+       } cout<<el;
+    }
   }
 }
