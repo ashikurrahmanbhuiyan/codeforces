@@ -46,7 +46,7 @@ in(t);while(t--){
     for(int i = 5;i<10;i++){
     	for(int j = 5;j<10;j++){
     		if(arr[i][j]=='X')
-            point += min(abs(i-9),abs(j-9))+1;
+            point += min((i%9),abs(j-9))+1;
     	}
     }
     cout<<point<<el;

@@ -19,18 +19,21 @@ freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
     int n,k;cin>>n>>k;int arr[n]; rep cin>>arr[i];int min = arr[0], max=0;
+    // for(int i = 0;i<n;i++){
+    // 	if(arr[i]>max)max = arr[i];if(arr[i]<min)min = arr[i];
+    // }
+    // int sum,d;
+    // for(int j = max;j>=min;j--){
+    //     sum = 0;
+    // 	for(int i = 0;i<n;i++){
+    // 		if((j-arr[i])>0)sum+= (j-arr[i]);
+    // 	}
+    // 	if(sum<=k){d=j;break;}
+    // }
+    // int z = (k-sum)/n;
+    // cout<<d+z<<el;
     for(int i = 0;i<n;i++){
-    	if(arr[i]>max)max = arr[i];if(arr[i]<min)min = arr[i];
+    	cout<<arr[i]<<el;
     }
-    int sum,d;
-    for(int j = max;j>=min;j--){
-        sum = 0;
-    	for(int i = 0;i<n;i++){
-    		if((j-arr[i])>0)sum+= (j-arr[i]);
-    	}
-    	if(sum<=k){d=j;break;}
-    }
-    int z = (k-sum)/n;
-    cout<<d+z<<el;
   }
 }
