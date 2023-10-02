@@ -18,12 +18,13 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int a,b,n;cin>>a>>b>>n; int arr[n]; rep cin>>arr[i]; int sum = b;
-    sort(arr,arr+n);
-    for(int i = 0;i<n;i++){
-    	if(arr[i]>=a) sum +=a-1;
-    	else sum += arr[i];
+    int n;cin>>n;int a[n],b[n];rep{cin>>a[i]>>b[i];}
+    int x=a[0],y=b[0], ans = a[0];
+    for(int i = 1;i<n;i++){
+    	if(a[i]>=x && b[i]>=y){
+    		ans = -1;
+    	}
     }
-    cout<<sum<<el;
+    cout<<ans<<el;
   }
 }
