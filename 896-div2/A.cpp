@@ -18,19 +18,63 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int arr[n];int r=0;
-    for(int i = 0;i<n;i++)
-    	cin>>arr[i];
-    for(int i = 0;i<2;i++){
-    	for(int j = 0;j<n;j++){
-    		r = r ^ arr[j];
-    	}
-    	for(int j = 0;j<n;j++){
-    		arr[j] = r;
-    	}
-    	cout<<r<<" ";
+    int n;cin>>n;int arr[n]; rep cin>>arr[i];int s=arr[0];
+    if(n%2==0){
+        cout<<2<<el;
+        cout<<1<<" "<< n<<el;
+        cout<<1<<" "<< n<<el;
+    }else{
+        cout<<5<<el;
+    
+        for(int i = 1;i<2;i++){
+            s = s ^ arr[i];
+        }
+        cout<<1<<" "<< 2<<el;
+        for(int i = 0;i<2;i++){
+            arr[i] = s;
+        }
+        for(int i = 1;i<2;i++){
+            s = s ^ arr[i];
+        }
+        cout<<1<<" "<< 2<<el;
+        for(int i = 0;i<2;i++){
+            arr[i] = s;
+        }
+        s = arr[1];
+        for(int i = 2;i<n;i++){
+            s = s ^ arr[i];
+        }
+        cout<<2<< " " << n<<el;
+        for(int i = 1;i<n;i++){
+            arr[i] = s;
+        }
+        for(int i = 2;i<n;i++){
+            s = s ^ arr[i];
+        }
+        cout<<2<< " " << n<<el;
+        for(int i = 1;i<n;i++){
+            arr[i] = s;
+        }
+    // s = arr[1];
+    //     for(int i = 2;i<n;i++){
+    //         s = s ^ arr[i];
+    //     }
+    //     cout<<2<< " " << n<<el;
+    //     for(int i = 1;i<n;i++){
+    //         arr[i] = s;
+
+    
+    for(int i = 0;i<n;i++){
+        cout<<arr[i]<<el;
     }
-    cout<<el;
-    cout<<r<<el;
+    }
+    // else{
+    //     cout<<5<<el;
+    //     cout<<1<<" "<< n-1<<el;
+    //     cout<<2<<" "<< n<<el;
+    //     cout<<1<<" "<< n-1<<el;
+    //     cout<<2<<" "<< n<<el;
+    //     cout<<2<<" "<< n<<el;
+    // }
   }
 }

@@ -18,6 +18,21 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    
+    int n;cin >> n;
+    vector<pair<int,int>> v,ans;
+    int x;
+    rep{
+        cin >> x;
+        v.push_back({x,i});
+    }
+    sort(v.begin(),v.end(),greater());
+     rep{
+         ans.push_back({v[i].second,i});
+     }
+    sort(ans.begin(),ans.end());
+    for(auto t: ans){
+        cout << t.second+1 << " ";
+    }cout <<endl;
+
   }
 }
