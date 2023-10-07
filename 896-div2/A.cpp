@@ -23,58 +23,57 @@ in(t);while(t--){
         cout<<2<<el;
         cout<<1<<" "<< n<<el;
         cout<<1<<" "<< n<<el;
-    }else{
-        cout<<5<<el;
+    // }else{
+    //     cout<<5<<el;
     
-        for(int i = 1;i<2;i++){
-            s = s ^ arr[i];
-        }
-        cout<<1<<" "<< 2<<el;
-        for(int i = 0;i<2;i++){
-            arr[i] = s;
-        }
-        for(int i = 1;i<2;i++){
-            s = s ^ arr[i];
-        }
-        cout<<1<<" "<< 2<<el;
-        for(int i = 0;i<2;i++){
-            arr[i] = s;
-        }
-        s = arr[1];
-        for(int i = 2;i<n;i++){
-            s = s ^ arr[i];
-        }
-        cout<<2<< " " << n<<el;
-        for(int i = 1;i<n;i++){
-            arr[i] = s;
-        }
-        for(int i = 2;i<n;i++){
-            s = s ^ arr[i];
-        }
-        cout<<2<< " " << n<<el;
-        for(int i = 1;i<n;i++){
-            arr[i] = s;
-        }
-    // s = arr[1];
+    //     for(int i = 1;i<2;i++){
+    //         s = s ^ arr[i];
+    //     }
+    //     cout<<1<<" "<< 2<<el;
+    //     for(int i = 0;i<2;i++){
+    //         arr[i] = s;
+    //     }
+    //     for(int i = 1;i<2;i++){
+    //         s = s ^ arr[i];
+    //     }
+    //     cout<<1<<" "<< 2<<el;
+    //     for(int i = 0;i<2;i++){
+    //         arr[i] = s;
+    //     }
+    //     s = arr[1];
     //     for(int i = 2;i<n;i++){
     //         s = s ^ arr[i];
     //     }
     //     cout<<2<< " " << n<<el;
     //     for(int i = 1;i<n;i++){
     //         arr[i] = s;
+    //     }
+    //     for(int i = 2;i<n;i++){
+    //         s = s ^ arr[i];
+    //     }
+    //     cout<<2<< " " << n<<el;
+    //     for(int i = 1;i<n;i++){
+    //         arr[i] = s;
+    //     }
+    // // s = arr[1];
+    // //     for(int i = 2;i<n;i++){
+    // //         s = s ^ arr[i];
+    // //     }
+    // //     cout<<2<< " " << n<<el;
+    // //     for(int i = 1;i<n;i++){
+    // //         arr[i] = s;
 
     
-    for(int i = 0;i<n;i++){
-        cout<<arr[i]<<el;
-    }
-    }
-    // else{
-    //     cout<<5<<el;
-    //     cout<<1<<" "<< n-1<<el;
-    //     cout<<2<<" "<< n<<el;
-    //     cout<<1<<" "<< n-1<<el;
-    //     cout<<2<<" "<< n<<el;
-    //     cout<<2<<" "<< n<<el;
+    // for(int i = 0;i<n;i++){
+    //     cout<<arr[i]<<el;
     // }
+    }
+    else{
+        cout<<4<<el;
+        cout<<1<<" "<< 2<<el;
+        cout<<1<<" "<< 2<<el;
+        cout<<2<<" "<< n<<el;
+        cout<<2<<" "<< n<<el;
+    }
   }
 }
