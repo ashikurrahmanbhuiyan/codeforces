@@ -31,7 +31,7 @@ in(t);while(t--){
     	// cout<<arr[l][i]<<" ";
     	// cout<<arr[i][n-1-l]<<" ";
     	// cout<<arr[n-1-l][n-1-i]<<" ";
-    	// cout<<arr[n-i-1][l]<<el;
+    	// cout<<arr[n-1-i][l]<<el;
     	if(arr[l][i]>max) max = arr[l][i];
     	if(arr[i][n-1-l]>max) max = arr[i][n-1-l];
     	if(arr[n-1-l][n-1-i]>max) max = arr[n-1-l][n-1-i];
@@ -40,8 +40,6 @@ in(t);while(t--){
     	ans += max - arr[i][n-1-l];
     	ans += max - arr[n-1-l][n-1-i];
     	ans += max - arr[n-i-1][l];
-
-
     }
 }
     cout<<ans<<el;
