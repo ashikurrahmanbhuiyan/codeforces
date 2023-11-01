@@ -18,19 +18,13 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;vector<int> v;int d=4;
-    while(d--){
-        v.push_back(n%10);
-        //cout<<n%10<<el;
-        n/=10;
+    int n,k;cin>>n>>k;string s;cin>>s;map<char, int> m;
+    for(int i = 0;i<n;i++)	m[s[i]]++;
+    	int d = 0;
+    for(auto i : m){
+    	if(i.second%2 ==1) d++;
     }
-    reverse(v.begin(),v.end());
-    int sum = 0;
-    int a = 1;
-    for(int i = 0;i<v.size();i++){
-        if(v[i] == 0) v[i] = 10;
-        sum += abs(v[i]-a)+1;
-        a = v[i];
-    }
-    cout<<sum<<el;
-5k
+    if((d-1-k)<=0 || (d-k)<=0) cout<<"YES"<<el;
+    else cout<<"NO"<<el;
+  }
+}

@@ -28,3 +28,9 @@ in(t);while(t--){
     cout<<ans<<el;
   }
 }
+
+
+lat
+
+
+
