@@ -18,14 +18,11 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n,k;cin>>n>>k;int arr[n];int ans = k; rep cin>> arr[i];
-     for(int i = 0;i<n;i++){
-     	int d = arr[i]/k; if(arr[i]%k == 0) ans = 0; 
-     	else d++; d*=k;
-     	if((d-arr[i])<ans) 
-     		ans = d-arr[i];
-     }
-    cout<<ans<<el;
-
+    int c,k,e;cin>>c>>k>>e;
+    if(c>=k) cout<<c<<el;
+    //else if((c+e)>=k) cout<<k<<el;
+    else{
+      cout<<((k-c-e))+k<<el;
+    }
   }
 }
