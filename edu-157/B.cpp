@@ -16,13 +16,20 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 #ifndef ONLINE_JUDGE
 freopen("/home/ashik/Documents/input.txt","r",stdin);
-#endifedu
+#endif
 in(t);while(t--){
-    int c,k,e;cin>>c>>k>>e;
-    if(c>=k) cout<<c<<el;
-    else if((c+e)>=k) cout<<k<<el;
-    else{
-      cout<<((k-c-e))+k<<el;
+    int n;cin>>n;n*=2; int arr[n];rep cin>>arr[i];
+    sort(arr,arr+n);
+    n/=2;int sum = 0;
+    for(int i = 1;i<n;i++){
+      sum += abs(arr[i]-arr[i-1]);
+      sum += abs(arr[i+n]-arr[i+n-1]);
     }
+    cout<<sum<<el;
+    for(int i = 0;i<n;i++){
+      cout<<arr[i]<<" ";
+      cout<<arr[i+n]<<el;
+    }
+    //rep cout<<arr[i]<<el;
   }
 }
