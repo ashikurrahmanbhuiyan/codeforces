@@ -18,25 +18,19 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n,k;cin>>n>>k;int arr[n];rep cin>>arr[i];
-    int ans = 1;int max = k;
-	for(int i = 0;i<n;i++){
-		int z = arr[i]/k;
-		z++;z = k * z;
-		if(arr[i]%k==0) max = 0;
-		if((z-arr[i])<max) 
-			max = z-arr[i];
-    }
-    int z= 0;
-    if(k==4){
-    	if(max>2)max=2;
-    	for(int i = 0;i<n;i++){
-    		if(arr[i]%2 ==0) z++;
-    		if(arr[i]%k==0) max = 0;
+    int n,m;cin>>n>>m;int a[n]; map<int, int> map;vector<int> v;
+    rep cin>>a[i];int d;
+    for(int i = 0;i<m;i++) {cin>>d;if(map[d] == 0) v.push_back(d);map[d]++;}
+    for(int i = 0;i<v.size();i++){
+    	int x = pow(2,v[i]);
+    	//cout<<v[i]<<el;
+    	for(int j = 0;j<n;j++){
+    		if(a[j]%x==0) a[j]+=pow(2,v[i]-1);
     	}
-    	if(z>1)max=0;
-    	if(z>0&&max==2)max=1;
     }
-    cout<<max<<el;
+    for(int i = 0;i<n;i++){
+    	cout<<a[i]<<" ";
+    }
+    cout<<el;
   }
 }
