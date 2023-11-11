@@ -15,9 +15,29 @@ int32_t main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 #ifndef ONLINE_JUDGE
-freopen("input.txt","r",stdin);
+freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    
+    int n;cin>>n;string s;cin>>s; int nn = n/2; int d = -1;
+    for(int i = 0;i<nn;i++){
+      if(s[i] != s[n-1-i] && d == -1){
+        d=i;
+        for(int j = d;j<nn;j++){
+          if(s[j] != s[n-1-j]){
+            if(s[j] == '0') s[j]= '1';else s[j]='0';
+          }
+          else break;
+        }
+      }
+    }
+    int ans = 1;
+    // for(int i = 0;i<n;i++){
+    //   cout<<s[i];
+    // }
+    for(int i = 0;i<nn;i++){
+      if(s[i] != s[n-1-i]) ans = 0;
+    }
+    if(ans == 1)cout<<"YES"<<el;
+    else cout<<"NO"<<el;
   }
 }
