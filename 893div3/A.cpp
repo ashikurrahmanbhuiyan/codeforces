@@ -18,41 +18,19 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int a,b;cin>>a>>b;char arr[a][b];
-    for(int i = 0;i<a;i++){
-      for(int j = 0;j<b;j++){
-        cin>>arr[i][j];
-      }
+    int n;cin>>n;vector<int> v;int d=4;
+    while(d--){
+        v.push_back(n%10);
+        //cout<<n%10<<el;
+        n/=10;
     }
-    char c= 'v' ;int d=1;
-    for(int i = 0;i<b;i++){
-      for(int j = 0;j<a;j++){
-        if(arr[j][i] == 'v' && d == 1){
-          d++;i++;j=0;
-          c = 'i';
-          if(i==b) break;
-
-        }
-        if(arr[j][i] == 'i' && d == 2){
-          d++;i++;j=0;
-          c = 'k';
-          if(i==b) break;
-        }
-        if(arr[j][i] == 'k' && d == 3){
-          d++;i++;j=0;
-          c = 'a';
-          if(i==b) break;
-        }
-        if(arr[j][i] == 'a' && d == 4){
-          d++;i++;j=0;
-          if(i==b) break;
-          break;
-        }
-      }
-      if(d == 5) break;
+    reverse(v.begin(),v.end());
+    int sum = 0;
+    int a = 1;
+    for(int i = 0;i<v.size();i++){
+        if(v[i] == 0) v[i] = 10;
+        sum += abs(v[i]-a)+1;
+        a = v[i];
     }
-    if(d == 5) cout<<"YES"<<el;
-    else cout<<"NO"<<el;
-
-  }
-}
+    cout<<sum<<el;
+5k
