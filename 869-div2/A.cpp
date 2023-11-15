@@ -18,28 +18,20 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-	int n,k;cin>>n>>k;int c = 0,sum = 0,arr[n]; rep cin>>arr[i];
-	for(int j = 0;j<n;j++){
-			c += pow(arr[j],2);
-			sum += arr[j];
-		}
-		c = k - c;
-		int b = 4*sum;
-		int a = 4*n;
-		c = c/a;
-		b = b/a;
-		a = a/a;
-		int l = (b*b);
-		int m = 4*a*c;
-		int z = sqrt(l+m)-b;
-		cout<<z/2<<el;
-	// for(int i = 1;;i++){
-	// 	int d = 4*i*sum;
-	// 	int l = 4 * n * i * i;
-	// 	if((d+l) == ans) {
-	// 		cout<<i<<el;
-	// 		break;
-	// 	}
-	// }
+    int n,k; cin>>n>>k;char arr[n][k];
+    for(int i = 0;i<n;i++){
+    	for(int j = 0;j<k;j++){
+    		cin>>arr[i][j];
+    	}
+    }
+    int d, ans = 0;
+    for(int i = 0;i<n;i++){
+    	d = 0;
+    	for(int j = 0;j<k;j++){
+    		if(arr[i][j] == arr[0][j]) d++;
+    	}
+    	if(d == k) ans++;
+    }
+    cout<<ans<<el;
   }
 }
