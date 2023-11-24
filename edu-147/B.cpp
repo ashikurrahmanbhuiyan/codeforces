@@ -19,11 +19,14 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int a[n],b[n]; int c = 1, l = 1, r = 1,ans = 1,k=1;
+    int n;cin>>n;int a[n],b[n];
+    int c = 1, l = 1, r = 1,ans = 1,k=1;
     rep cin>>a[i];rep cin>>b[i];
+    int x;if(a[0]==b[0])x = 1;else x=0;
     for(int i = 1;i<n;i++){
+    	if(a[i]==b[i]) x++;
     	if(b[i-1]>b[i]){
-    		if(c>ans){
+    		if(c>ans && x!= c){
     			ans = c;
     			l = k;
     			r = i;
@@ -32,11 +35,14 @@ in(t);while(t--){
     		else{
     			k = i+1;
     		}
-    		c = 1;
+    		c = 0;x=0;
     	}
     	else if((i+1)==n){
+    		c++;
+    		if(c>ans && x!= c){
     		l = k;
     		r = i+1;
+    		}
     	}
     	else{
     		c++;

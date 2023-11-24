@@ -19,20 +19,16 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int a[n],b[n];int l = 1,r=n;
-    rep cin>>a[i];rep cin>>b[i];
+    int n,t;cin>>n>>t;int a[n],b[n];rep cin>>a[i];rep cin>>b[i];
+    int ans = -1 , out = -1;
     for(int i = 0;i<n;i++){
-    	if(a[i]!=b[i]){
-    		l = i+1;
-    		while(i<n){
-    			if(a[i]==b[i]){
-    			r = i+1;break;
-    		    }
-    		    i++;
+    	if(a[i]<=(t-i)){
+    		if(b[i]>ans) {
+    			ans = b[i];
+    			out = i+1;
     		}
     	}
     }
-    cout<<l<<" "<<r<<el;
-
+    cout<<out<<el;
   }
 }

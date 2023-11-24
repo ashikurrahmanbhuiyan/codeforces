@@ -19,20 +19,6 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int a[n],b[n];int l = 1,r=n;
-    rep cin>>a[i];rep cin>>b[i];
-    for(int i = 0;i<n;i++){
-    	if(a[i]!=b[i]){
-    		l = i+1;
-    		while(i<n){
-    			if(a[i]==b[i]){
-    			r = i+1;break;
-    		    }
-    		    i++;
-    		}
-    	}
-    }
-    cout<<l<<" "<<r<<el;
-
+    int n;cin>>n;cout<<((n*n)+((n+1)*2))<<el;
   }
 }

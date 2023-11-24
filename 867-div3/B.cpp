@@ -18,21 +18,4 @@ cin.tie(NULL);
 #ifndef ONLINE_JUDGE
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
-in(t);while(t--){
-    int n;cin>>n;int a[n],b[n];int l = 1,r=n;
-    rep cin>>a[i];rep cin>>b[i];
-    for(int i = 0;i<n;i++){
-    	if(a[i]!=b[i]){
-    		l = i+1;
-    		while(i<n){
-    			if(a[i]==b[i]){
-    			r = i+1;break;
-    		    }
-    		    i++;
-    		}
-    	}
-    }
-    cout<<l<<" "<<r<<el;
-
-  }
-}
+in(t);while(t--){int n;cin>>n;int a[n];rep cin>>a[i];sort(a,a+n);int x =a[0]*a[1], y = a[n-1]*a[n-2]; if(x>y) cout<<x<<el;else cout<<y<<el;}}
