@@ -12,6 +12,10 @@ using namespace std;
 #define mod               1000000007
 #define big               9223372036854775807
 #define pb                push_back
+bool sortbysec(const pair<int,int> &a,
+              const pair<int,int> &b){
+    return (a.second < b.second);
+}
 int32_t main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
@@ -19,13 +23,22 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int arr[n];rep cin>>arr[i];
-    	int ans = 0, gc = 0;
-    	for(int i = 0;i<(n/2);i++){
-    		
-    			ans = abs(arr[i]-arr[n-i-1]);
-    		gc = __gcd(ans,gc);
-    	}
-    	cout<<gc<<el;
+    int n,k;cin>>n>>k;int b[n],a; vector<pair<int,int>>v;
+    for(int i = 0;i<n;i++){
+    	cin>>a;
+    	v.pb(make_pair(i,a) );
+    }
+    sort(v.begin(),v.end(),sortbysec);
+    rep cin>>b[i];sort(b,b+n);
+    for(int i = 0;i<n;i++){
+    	v[i].second = b[i];
+    }
+    sort(v.begin(),v.end());
+    for(int i = 0;i<n;i++){
+    	cout<<v[i].second<<" ";
+    }
+    cout<<el;
+    
+
   }
 }

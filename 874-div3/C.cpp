@@ -19,13 +19,17 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int arr[n];rep cin>>arr[i];
-    	int ans = 0, gc = 0;
-    	for(int i = 0;i<(n/2);i++){
-    		
-    			ans = abs(arr[i]-arr[n-i-1]);
-    		gc = __gcd(ans,gc);
-    	}
-    	cout<<gc<<el;
+    int n ; cin>>n;int arr[n],o=0,e=0,min = big;
+    for(int i = 0;i<n;i++){
+    	cin>>arr[i];
+    	if(arr[i]%2==0)e++;
+    	else o++;
+    	if(arr[i]<min) min = arr[i];
+    }
+    if(e == n || o == n) cout<<"YES"<<el;
+    else{
+         if(min%2==1)cout<<"YES"<<el;
+         else cout<<"NO"<<el;
+    }
   }
 }

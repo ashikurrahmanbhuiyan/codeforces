@@ -19,13 +19,17 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int arr[n];rep cin>>arr[i];
-    	int ans = 0, gc = 0;
-    	for(int i = 0;i<(n/2);i++){
-    		
-    			ans = abs(arr[i]-arr[n-i-1]);
-    		gc = __gcd(ans,gc);
+    int n;cin>>n;string s;cin>>s;int d = 1,ans = 1;
+    for(int i = 1;i<n;i++){
+    	if(s[i]== s[i-1]) d++;
+    	else{
+    		if(d>ans) ans = d;
+    		d = 1;
     	}
-    	cout<<gc<<el;
+    	if(i==(n-1)){
+    		if(d>ans) ans = d;
+    	}
+    }
+    cout<<ans+1<<el;
   }
 }

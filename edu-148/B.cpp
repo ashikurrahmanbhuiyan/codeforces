@@ -19,13 +19,35 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int arr[n];rep cin>>arr[i];
-    	int ans = 0, gc = 0;
-    	for(int i = 0;i<(n/2);i++){
+    int n,k,ans = 0;cin>>n>>k;int arr[n];rep {cin>>arr[i];ans+=arr[i];}
+    sort(arr,arr+n);
+    int x = 0,y = n-1,a,xx=0,yy=0,zz=0;
+    for(int i = 0;i<k;i++){
+    	a = arr[x] + arr[x+1];
+    	if(a<arr[y] && (x+1)<y){
+    		if((k-i)>1){
+		  		if(x<arr[y-1]){
+		    		xx += a;
+		    		x = x+2;
+		    	}
+		    	else{
+		    		xx += arr[y];
+		    		y--;
+		    	}
+    		}
+    		else{
+    			xx += a;
+    		    x = x+2;
+    		}
     		
-    			ans = abs(arr[i]-arr[n-i-1]);
-    		gc = __gcd(ans,gc);
     	}
-    	cout<<gc<<el;
+    	else{
+    		xx += arr[y];
+    		y--;
+    	}
+        //yy += arr[n-1-i];
+        //zz += arr[i*2]+arr[(i*2)+1];
+    }
+    cout<<ans- xx<<el;
   }
 }
