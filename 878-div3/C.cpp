@@ -19,21 +19,28 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int a[n],b[n];vector<pair<int,int>>v;
-  	for(int i = 0;i<n;i++){
-  		cin>>a[i];
-  		cin>>b[i];
-  		v.pb(make_pair(b[i],a[i]));
-  	}
-  	sort(v.begin(),v.end(),greater());
-  	int sum  = 0;int x = 0;
-  	for(int i = 0;i<n;i++){
-  		if(v[i].second>x){
-  			sum += v[i].first;
-  			x++;
-  			
-  		}
-  	}
-  	cout<<sum<<el;
+    int n,k,q,a,x=0,ans=1,ans1=0;cin>>n>>k>>q;vector<int>v;
+    for(int i = 0;i<n;i++){
+    	cin>>a;
+    	if(a<=q) x++;
+    	else{
+    		if(x>0)v.pb(x);
+    		x=0;
+    	}
+    	if(i==(n-1) && x>0)v.pb(x);
+    }
+    	int z = v.size();
+    	for(int i = 0;i<z;i++){
+    		if(v[i]>=k){
+	    		x = v[i]-k+1;
+	    		ans = 0;
+	    		while(x>0){
+		    		ans+=x;x--;
+		    	}
+		    	ans1+=ans;
+	    	}
+	    	//cout<<v[i]<<el;
+    	}
+	    cout<<ans1<<el;
   }
 }

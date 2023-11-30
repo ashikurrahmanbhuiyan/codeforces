@@ -12,6 +12,8 @@ using namespace std;
 #define mod               1000000007
 #define big               9223372036854775807
 #define pb                push_back
+
+
 int32_t main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
@@ -19,21 +21,12 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int a[n],b[n];vector<pair<int,int>>v;
-  	for(int i = 0;i<n;i++){
-  		cin>>a[i];
-  		cin>>b[i];
-  		v.pb(make_pair(b[i],a[i]));
-  	}
-  	sort(v.begin(),v.end(),greater());
-  	int sum  = 0;int x = 0;
-  	for(int i = 0;i<n;i++){
-  		if(v[i].second>x){
-  			sum += v[i].first;
-  			x++;
-  			
-  		}
-  	}
-  	cout<<sum<<el;
+    int n,k;cin>>n>>k;int ans = 0;vector<int>v;
+    while(ans<=n){
+    	v.pb(ans);
+    	ans = pow(2,ans);
+    }
+    n = v.size();
+    cout<<n<<el;
   }
 }
