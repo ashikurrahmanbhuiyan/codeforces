@@ -11,6 +11,7 @@ using namespace std;
 #define repi(i,a,n)       for (int i = a; i < n; i++)
 #define mod               1000000007
 #define big               9223372036854775807
+#define pb                push_back
 int32_t main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
@@ -18,25 +19,20 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n,k,g;cin>>n>>k>>g;int sc = k*g;
-    //cout<<sc<<el;
-    // int ans = kg/(n-1);
-    // ans = ans-g;
-    // ans = ans*(n-1);
-    // cout<<ans<<el;
-    int z = ceil((double)g/2)-1;
-    int zz = z*n;
-    //cout<<zz<<el;
-    if(zz>=sc) cout<<sc<<el;
-    else{
-        int zm = z * (n-1);
-        int lk = sc-zm;
-        int xx= lk%g;
-        if(xx< (z+1)) zm+=xx;
-        else{
-            zm -= (g-xx);
-        }
-        cout<<zm<<el;
+    int n;cin>>n;int arr[n],o=-1,t=-1,m=-1;rep cin>>arr[i];
+    for(int i = 0;i<n;i++){
+    	if(arr[i] == 1) o = i+1;
+    	if(arr[i] == 2) t = i+1;
+    	if(arr[i] == n) m = i+1;
     }
+    if(m>o && m<t) cout<<m<<" "<<m<<el;
+    if(m>t && m<o) cout<<m<<" "<<m<<el;
+    if(m>o && m>t){
+    	if(o>t) cout<<o<<" "<<m<<el;
+    	else cout<<t<<" "<<m<<el;
+    }
+    if(m<o && m<t)
+    	if(t<o) cout<<t<<" "<<m<<el;
+    	else cout<<o<<" "<<m<<el;
   }
 }

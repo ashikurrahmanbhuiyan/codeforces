@@ -11,6 +11,7 @@ using namespace std;
 #define repi(i,a,n)       for (int i = a; i < n; i++)
 #define mod               1000000007
 #define big               9223372036854775807
+#define pb                push_back
 int32_t main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
@@ -18,25 +19,33 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n,k,g;cin>>n>>k>>g;int sc = k*g;
-    //cout<<sc<<el;
-    // int ans = kg/(n-1);
-    // ans = ans-g;
-    // ans = ans*(n-1);
-    // cout<<ans<<el;
-    int z = ceil((double)g/2)-1;
-    int zz = z*n;
-    //cout<<zz<<el;
-    if(zz>=sc) cout<<sc<<el;
-    else{
-        int zm = z * (n-1);
-        int lk = sc-zm;
-        int xx= lk%g;
-        if(xx< (z+1)) zm+=xx;
-        else{
-            zm -= (g-xx);
-        }
-        cout<<zm<<el;
+    int n;cin>>n;int arr[n];rep cin>>arr[i];int d = 0, f=0;
+    for(int i = 1;i<n;i++){
+    	if(arr[i]<arr[i-1]){
+    		d = i-1;
+    		f = i;
+    		break;
+    	}
     }
+    if(d==0 && d==0) {rep cout<<1;cout<<el;}
+    else{
+    int x = arr[f];
+    for(int i = 0;i<f;i++){
+    	if(arr[i]>= arr[f]) cout<<1;
+    	else cout<<0;
+    }int y;
+    for(int i = 0;i<f;i++){
+    	if(arr[i]>= arr[f]){
+    		y = arr[i];break;
+    	}
+    }
+    for(int i = f;i<n;i++){
+    	if(arr[i]<= y && arr[i] >= x){
+    		cout<<1;
+    		x = arr[i];
+    	}else cout<<0;
+    }
+    cout<<el;
+	}
   }
 }

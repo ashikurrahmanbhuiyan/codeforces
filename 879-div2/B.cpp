@@ -11,6 +11,7 @@ using namespace std;
 #define repi(i,a,n)       for (int i = a; i < n; i++)
 #define mod               1000000007
 #define big               9223372036854775807
+#define pb                push_back
 int32_t main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
@@ -18,25 +19,33 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n,k,g;cin>>n>>k>>g;int sc = k*g;
-    //cout<<sc<<el;
-    // int ans = kg/(n-1);
-    // ans = ans-g;
-    // ans = ans*(n-1);
-    // cout<<ans<<el;
-    int z = ceil((double)g/2)-1;
-    int zz = z*n;
-    //cout<<zz<<el;
-    if(zz>=sc) cout<<sc<<el;
+    string s; cin>>s;int n = s.size();
+    int a[n];
+    for(int i = 0;i<n;i++) a[i] = s[i]-48;
+    	cin>>s;int m = s.size();
+    int b[m];
+    for(int i = 0;i<m;i++) b[i] = s[i]-48;
+    	int ans = 0;
+    if(n!=m){
+    	if(n>m){
+    		ans+= a[0];
+    		ans += (n-1) * 9;
+    	}
+    	else{
+    		ans+= b[0];
+    		ans += (m-1) * 9;
+    	}
+    	cout<<ans<<el;
+    }
     else{
-        int zm = z * (n-1);
-        int lk = sc-zm;
-        int xx= lk%g;
-        if(xx< (z+1)) zm+=xx;
-        else{
-            zm -= (g-xx);
-        }
-        cout<<zm<<el;
+    	for(int i = 0;i<n;i++){
+    		if(a[i] != b[i]){
+    			ans+= abs(a[i] - b[i]);
+    			ans += (n-i-1) * 9; 
+    			break;
+    		}
+    	}
+    	cout<<ans<<el;
     }
   }
 }
