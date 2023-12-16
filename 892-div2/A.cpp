@@ -19,20 +19,21 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int d= ceil((double)(n-2)/2);
-    if(n<3){
-    for(int i = 1;i<=n;i++){
-    	cout<<i<<" ";
-    }cout<<el;
-	}
-	else{
-	    for(int i = 0;i<d;i++){
-	    	cout<<i+3<<" ";
-	    }
-	    cout<<1<<" ";
-	    for(int i = d;i<(n-2);i++){
-	    	cout<<i+3<<" ";
-	    }cout<<2<<el;
-	}
+    int n;cin>>n;int arr[n];rep cin>>arr[i];sort(arr,arr+n);
+    vector<int>v;
+    for(int i = 0;i<n;i++){
+    	if(arr[i]== arr[0]) v.pb(arr[i]);
+    	else break;
+    }
+    if(v.size()==n) cout<<-1<<el;
+    else{
+    	cout<<v.size()<<" "<<(n-v.size())<<el;
+    	for(int i = 0;i<v.size();i++){
+    		cout<<arr[i]<<" ";
+    	}cout<<el;
+    	for(int i = v.size();i<n;i++){
+    		cout<<arr[i]<<" ";
+    	}cout<<el;
+    }
   }
 }

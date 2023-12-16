@@ -18,13 +18,18 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n; cin>>n;int arr[n]; rep cin>>arr[i];int one = 0, other = 0,same =1;
+    int n,a; cin>>n;
+    int one = 0,sum =0;
     for(int i = 0;i<n;i++){
-    	if(arr[i] == 1) one++;
-    	else other = other+ arr[i];
+    	cin>>a;
+        if(a == 1) one++;
+        sum+=a;
     }
-    if(one>=other) cout<<"NO"<<el;
-    else if( n== 1)cout<<"NO"<<el;
-    else cout<<"YES"<<el;
+    if(n==1) cout<<"NO"<<el;
+    else{
+        int k = (one * 2) + (n-one) ;
+        if(k<=sum) cout<<"YES"<<el;
+        else cout<<"NO"<<el;
+    }
   }
 }

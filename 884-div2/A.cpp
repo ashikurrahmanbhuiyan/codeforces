@@ -19,20 +19,6 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;int d= ceil((double)(n-2)/2);
-    if(n<3){
-    for(int i = 1;i<=n;i++){
-    	cout<<i<<" ";
-    }cout<<el;
-	}
-	else{
-	    for(int i = 0;i<d;i++){
-	    	cout<<i+3<<" ";
-	    }
-	    cout<<1<<" ";
-	    for(int i = d;i<(n-2);i++){
-	    	cout<<i+3<<" ";
-	    }cout<<2<<el;
-	}
+    int a,b;cin>>a>>b;cout<<(a+b)<<endl;
   }
 }
