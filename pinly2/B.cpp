@@ -20,12 +20,25 @@ freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
     int n;cin>>n;int arr[n];rep cin>>arr[i];int ans = 0;
-    for(int i = 1;i<=n;){
-    	for(int j = 0;j<n;j++){
-    		if(arr[j] == i){ i++; cout<<arr[j]<<" ";}
+    map<int,int> m;
+    for(int i = 0;i<n;i++){
+    	if(m[arr[i]-1] == 1){
+    		m[arr[i]-1] = 0;
+    		m[arr[i]]++;
     	}
-    	ans++;cout<<el;
+    	else{
+    		m[arr[i]]++;
+    	}
     }
-    // cout<<ans-1<<el;
+    for(auto i:m)ans+=i.second;
+
+
+    // for(int i = 1;i<=n;){
+    // 	for(int j = 0;j<n;j++){
+    // 		if(arr[j] == i){ i++; cout<<arr[j]<<" ";}
+    // 	}
+    // 	ans++;cout<<el;
+    // }
+     cout<<ans-1<<el;
   }
 }
