@@ -19,21 +19,21 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n;cin>>n;vector<int>v1,v2;
-    int sum = 0, min3 = big,min4 = big;
-    for(int i = 0;i<n;i++){
-    	int m;cin>>m;int arr[m];
-    	for(int i = 0;i<m;i++){
-    		cin>>arr[i];
+    int m,k,a1,ak;cin>>m>>k>>a1>>ak;int z=0;
+    if((m-a1)<=0)	cout<<0<<el;
+    else{
+    	ak += a1/k;
+    	a1 = a1%k;
+    	int ll = m-a1, km =1,lm = k;
+    	while(1){
+    		if((lm*km)>=ll)break;
+    		km++;
     	}
-    	sort(arr,arr+m);
-    	int min1 = arr[0], min2 =  arr[1];
-    	if(min1<=min3) min3 = min1;
-    	if(min2<=min4) min4 = min2;
-    	sum+= min2;
-    	//cout<<min1<<" "<<min2<<el;
+    	if(((km*lm)+ a1) == m){
+            int bbb = km-ak;
+            cout<<min(z,bbb)<<el;
+        }
+    	cout<<ak<<el;
     }
-    cout<<sum-min4+min3<<el;
-    //cout<<el;
   }
 }

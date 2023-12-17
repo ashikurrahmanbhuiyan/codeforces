@@ -18,24 +18,27 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-	string s;cin>>s;int n = s.length();
-	string s1,s2;
-	for(int i = 0;i<n;i++){
-		s1+="()";
-	}
-	for(int i = 0;i<n;i++){
-		s2+="(";
-	}
-	for(int i = 0;i<n;i++){
-		s2+=")";
-	}
-	if(s[0] == '(' && s[1]==')' && n ==2)
-		cout<<"NO"<<el;
-	else if(s[0] == s[1]){
-		cout<<"YES\n"<<s1<<el;
-	}
-	else if(s[0] != s[1]){
-		cout<<"YES\n"<<s2<<el;
-	}
+	 string s;cin>>s;int n = s.size(),ans=0;
+	 if(s == "()") cout<<"NO"<<el;
+	 else{
+	 	cout<<"YES"<<el;
+	 	for(int i = 0;i<n-1;i++){
+	 		if (s[i] == s[i+1]) ans =1;
+	 	}
+	 	if(ans){
+	 		for(int i = 0;i<n;i++){
+	 			cout<<"()";
+	 		}cout<<el;
+	 	}
+	 	else{
+	 		for(int i = 0;i<n;i++){
+	 			cout<<"(";
+	 		}
+	 		for(int i = 0;i<n;i++){
+	 			cout<<")";
+	 		}
+	 		cout<<el;
+	 	}
+	 }
   }
 }
