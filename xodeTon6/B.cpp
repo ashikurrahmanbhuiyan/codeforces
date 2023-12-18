@@ -11,6 +11,9 @@ using namespace std;
 #define repi(i,a,n)       for (int i = a; i < n; i++)
 #define mod               1000000007
 #define big               9223372036854775807
+#define pb                push_back
+#define For(i,j,k) for(int i=(j);i<=(k);++i)
+int a[200005],b[200005];
 int32_t main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
@@ -18,11 +21,20 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n,m,k;cin>>n>>m>>k;int a[n],b[m],sum=0;
-    rep {cin>>a[i];sum+=a[i];}sort(a,a+n);
-    for(int i = 0;i<m;i++) cin>>b[i];sort(b,b+m);
-    	if(a[0]<b[m-1]) sum += (b[m-1]-a[0]);
-    	if(k%2) cout<<sum<<el;
-    	else cout<<(sum - max(a[n-1],b[m-1])+ min(a[0],b[0]))<<el;
+    int n,m,s=0,f=0,e=0; cin>>n>>m;
+    int a[n],b[m];
+	for(int i = 0;i<n;i++){
+		cin>>a[i];
+		f^=a[i];
+	}
+	for(int i = 0;i<m;i++){
+		cin>>b[i];
+		s|=b[i];
+	}
+	for(int i = 0;i<n;i++){
+		a[i] |= s;
+		e ^= a[i] ;
+	}
+	cout<<min(f,e)<<" "<<max(f,e)<<endl;
   }
 }

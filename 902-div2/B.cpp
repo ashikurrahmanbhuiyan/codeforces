@@ -11,6 +11,7 @@ using namespace std;
 #define repi(i,a,n)       for (int i = a; i < n; i++)
 #define mod               1000000007
 #define big               9223372036854775807
+#define pb                push_back
 int32_t main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
@@ -18,11 +19,34 @@ cin.tie(NULL);
 freopen("/home/ashik/Documents/input.txt","r",stdin);
 #endif
 in(t);while(t--){
-    int n,m,k;cin>>n>>m>>k;int a[n],b[m],sum=0;
-    rep {cin>>a[i];sum+=a[i];}sort(a,a+n);
-    for(int i = 0;i<m;i++) cin>>b[i];sort(b,b+m);
-    	if(a[0]<b[m-1]) sum += (b[m-1]-a[0]);
-    	if(k%2) cout<<sum<<el;
-    	else cout<<(sum - max(a[n-1],b[m-1])+ min(a[0],b[0]))<<el;
+    int n,k;cin>>n>>k;int a[n],b[n]; rep cin>>a[i];rep cin>>b[i];
+    vector<pair<int,int>>v;
+    for(int i = 0;i<n;i++){
+    	v.pb(make_pair(b[i],a[i]));
+    }
+    sort(v.begin(),v.end());
+    int ans = 0;queue<int>q,qq;
+    for(int i = 0;i<n;i++){
+    	if(q.size() == 0){
+    		ans += k;
+    		if(v[i].first<k){
+    		q.push(v[i].first);
+    		qq.push(v[i].second);
+    		}
+    	}
+    	else{
+    		ans+= q.front();
+    		qq.front()--;
+    		if(qq.front() == 0){
+    			q.pop();qq.pop();
+    		}
+    		if(v[i].first<k){
+    		q.push(v[i].first);
+    		qq.push(v[i].second);
+    		}
+    	}
+    }
+    cout<<ans<<el;
+    
   }
 }
